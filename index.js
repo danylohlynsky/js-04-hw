@@ -5,11 +5,6 @@ document.querySelectorAll('.digits, .opers')
 
 function digitOperPressed(e) {
     display.value += e.target.innerText;
-    for (let i = 0; i < display.value.length; i++) {
-        if (display.value.slice(i).classList.contains('opers') && display.value.slice(i+1).classList.contains('opers')) {
-            display.value = display.value.slice(i, '');
-        }
-    } 
     if (display.value.slice(0) === '/' ||
         display.value.slice(0) === '*' ||
         display.value.slice(0) === '+') {
@@ -17,6 +12,11 @@ function digitOperPressed(e) {
     }
     if (display.value.slice(0) === '.') {
         display.value = '0.';
+    // for (let i = 0; i < display.value.length; i++) {
+    //     if (display.value.slice(i).classList.contains('opers') && display.value.slice(i+1).classList.contains('opers')) {
+    //         display.value = display.value.slice(i, '');
+    //     }
+    // } 
     }
 }
 
